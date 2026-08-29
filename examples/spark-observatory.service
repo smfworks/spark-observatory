@@ -1,0 +1,14 @@
+[Unit]
+Description=Spark Observatory (live sparkDash wall)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/ABS/PATH/TO/spark-observatory
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 -m observatory --config /ABS/PATH/TO/spark-observatory/config.toml
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

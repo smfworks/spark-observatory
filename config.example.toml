@@ -1,0 +1,32 @@
+# Copy to config.toml and edit. Zero Python deps — stdlib tomllib.
+
+listen = "0.0.0.0:8790"
+poll_ms = 1000
+history_seconds = 120
+title = "SPARK-PAIR"
+subtitle = "YOUR-MODEL"
+# Identity chips under the title. Leave empty to fill from /v1/models.
+chips = ["edit me"]
+
+[source]
+# sparkdash: poll MiaAI sparkDash REST (recommended)
+# http:      poll a list of OpenAI-compatible + prometheus URLs only
+kind = "sparkdash"
+url = "http://127.0.0.1:5556"
+
+[[nodes]]
+id = "spark-a"
+label = "SPARK-A"
+sparkdash_id = "spark-a"          # must match sparkDash config/sparks.json id
+# Optional: extra LLM probe (used when sparkDash llm[] is empty)
+# llm_base_url = "http://10.0.0.33:8888"
+# CX-7 / cluster NIC names for the RoCE row (bytes/s → GB/s)
+roce_ifaces = ["enp1s0f0np0"]
+lan_ifaces = ["enP7s7"]
+
+[[nodes]]
+id = "spark-b"
+label = "SPARK-B"
+sparkdash_id = "spark-b"
+roce_ifaces = ["enp1s0f0np0"]
+lan_ifaces = ["enP7s7"]
