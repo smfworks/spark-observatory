@@ -28,9 +28,15 @@ Or copy `config.example.toml` → `config.toml` and edit node ids to match your 
 
 sparkDash itself is a separate service (Vite `:5173` / API `:5555` or `:5556`). This observatory **reads** it; it does not replace it.
 
+## Local mesh
+
+Home or lab layout: [NVIDIA Personal AI Router (PAIR)](https://github.com/NVIDIA/Personal-AI-Router) routes Ollama and LM Studio across LAN nodes, [sparkDash](https://github.com/MiaAI-Lab/sparkDash) collects Spark fleet metrics, and this observatory is the ops wall Hermes can open. Diagram, ports, and ownership are in [docs/local-mesh.md](docs/local-mesh.md).
+
+PAIR is NVIDIA's project. Install and take releases from [NVIDIA/Personal-AI-Router](https://github.com/NVIDIA/Personal-AI-Router). [smfworks/Personal-AI-Router](https://github.com/smfworks/Personal-AI-Router) is an SMF fork of that repo for reference only. SMF did not author PAIR.
+
 ## Hermes
 
-Point an agent at this repo. `AGENTS.md` + `skills/spark-observatory/SKILL.md` are the setup procedure.
+Point an agent at this repo. `AGENTS.md` + `skills/spark-observatory/SKILL.md` are the setup procedure. The mesh those agents sit in is [docs/local-mesh.md](docs/local-mesh.md).
 
 ## License
 

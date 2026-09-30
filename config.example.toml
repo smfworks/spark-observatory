@@ -19,7 +19,7 @@ id = "spark-a"
 label = "SPARK-A"
 sparkdash_id = "spark-a"          # must match sparkDash config/sparks.json id
 # Optional: extra LLM probe (used when sparkDash llm[] is empty)
-# llm_base_url = "http://10.0.0.33:8888"
+# llm_base_url = "http://<llm-host>:8888"
 # CX-7 / cluster NIC names for the RoCE row (bytes/s → GB/s)
 roce_ifaces = ["enp1s0f0np0"]
 lan_ifaces = ["enP7s7"]
